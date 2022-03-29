@@ -27,7 +27,7 @@ SECRET_KEY = 'd%m-1^1j&=11q41vn3&83l&6x@mv6k#gux7qn&cc4vey^$_hp2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-izennn-izenonlinequiz-t8ev6wamx71.ws-us38.gitpod.io']
+ALLOWED_HOSTS = ['8000-techwithanirudh-izenonli-ezizmmyu6nb.ws-us38.gitpod.io', 'localhost']
 
 # Application definition
 
@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'quiz_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-postgres_url = 'postgres://rkbvpbvhmhwpkl:dfdbee0878911220a024455cd4b11c5f66984a1607c8b2be30a7f1ce58d5e090@ec2-52-86-116-94.compute-1.amazonaws.com:5432/dbt1750f8sgc33'
-DATABASES = {}
-DATABASES['default'] = dj_database_url.parse(postgres_url, conn_max_age=None)
+# postgres_url = 'postgres://rkbvpbvhmhwpkl:dfdbee0878911220a024455cd4b11c5f66984a1607c8b2be30a7f1ce58d5e090@ec2-52-86-116-94.compute-1.amazonaws.com:5432/dbt1750f8sgc33'
+# DATABASES = {}
+# DATABASES['default'] = dj_database_url.parse(postgres_url, conn_max_age=None)
 # dj_database_url parses a given URL into something like this:
 # {
 #     'ENGINE': 'django.db.backends.postgresql',
@@ -92,6 +92,13 @@ DATABASES['default'] = dj_database_url.parse(postgres_url, conn_max_age=None)
 #     'HOST': 'ec2-52-86-116-94.compute-1.amazonaws.com',
 #     'PORT': '5432'
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 
 # Password validation
@@ -155,8 +162,8 @@ REST_FRAMEWORK = {
 CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = [
-    'https://3000-izennn-izenonlinequiz-t8ev6wamx71.ws-us38.gitpod.io', 
-    'https://8000-izennn-izenonlinequiz-t8ev6wamx71.ws-us38.gitpod.io',
+    'https://3000-techwithanirudh-izenonli-ezizmmyu6nb.ws-us38.gitpod.io', 
+    'https://8000-techwithanirudh-izenonli-ezizmmyu6nb.ws-us38.gitpod.io',
     # 'https://izens-quiz.netlify.app',
     # 'https://izen-online-quiz.netlify.app'
 ]
