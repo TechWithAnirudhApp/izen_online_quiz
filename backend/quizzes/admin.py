@@ -59,10 +59,11 @@ class QuestionAdmin(admin.ModelAdmin):
 @admin.register(models.Result)
 class ResultAdmin(admin.ModelAdmin):
 	fields = [
+		'name',
 		'score',
 		'quiz',
 	]
-	list_display=['id', 'score', 'quiz']
+	list_display=['id', 'name', 'score', 'quiz']
 	list_filter=[QuizResultFilter, ]
 	search_fields=['quiz', 'title']
 	# inlines = [AnswerInline, ]

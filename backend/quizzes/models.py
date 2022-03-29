@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import MaxValueValidator, MinValueValidator 
 
 class Quiz(models.Model):
 	author = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -38,13 +39,17 @@ class Result(models.Model):
 		related_name='results', # need related name for hyper link related field to work ?!?
 		on_delete=models.CASCADE
 	)
-	score = models.PositiveIntegerField(default=0)
+	name = models.CharField(max_length=255, default='Unknown')
+	score = models.PositiveIntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(100)])
 
 	class Meta:
 		ordering = ['id']
 
 	def __int__(self):
 		return self.score
+
+	def __str__(self):
+		return self.name
 
 class Answer(models.Model):
 	question = models.ForeignKey(
