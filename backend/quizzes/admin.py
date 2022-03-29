@@ -29,6 +29,22 @@ class QuizQuestionFilter(admin.SimpleListFilter):
 			quiz_title = self.value()
 			return queryset.filter(Q(quiz__title=quiz_title))
 
+class QuizResultFilter(admin.SimpleListFilter):
+	title = 'quiz'
+	parameter_name = 'quiz'
+
+	def lookups(self, request, model_admin): # create clickable links on right hand side 
+		quizzes = models.Quiz.objects.all()
+		lookups = ()
+		for quiz in quizzes:
+			lookups += ((quiz.title, quiz.title),)
+		return lookups
+
+	def queryset(self, request, queryset): # return all the ojbects that fit parameter that we set
+		if self.value(): # why is self.value() containing the year?
+			quiz_title = self.value()
+			return queryset.filter(Q(quiz__title=quiz_title))
+
 @admin.register(models.Question)
 class QuestionAdmin(admin.ModelAdmin):
 	fields = [
@@ -39,6 +55,17 @@ class QuestionAdmin(admin.ModelAdmin):
 	list_filter=[QuizQuestionFilter, ]
 	search_fields=['quiz', 'title']
 	inlines = [AnswerInline, ]
+
+@admin.register(models.Result)
+class ResultAdmin(admin.ModelAdmin):
+	fields = [
+		'score',
+		'quiz',
+	]
+	list_display=['id', 'score', 'quiz']
+	list_filter=[QuizResultFilter, ]
+	search_fields=['quiz', 'title']
+	# inlines = [AnswerInline, ]
 
 class AnswerQuestionFilter(admin.SimpleListFilter):
 	title = 'quiz'

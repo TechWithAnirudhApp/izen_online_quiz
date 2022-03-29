@@ -32,6 +32,20 @@ class Question(models.Model):
 	def __str__(self):
 		return self.prompt
 
+class Result(models.Model):
+	quiz = models.ForeignKey(
+		Quiz, 
+		related_name='results', # need related name for hyper link related field to work ?!?
+		on_delete=models.CASCADE
+	)
+	score = models.PositiveIntegerField(default=0)
+
+	class Meta:
+		ordering = ['id']
+
+	def __int__(self):
+		return self.score
+
 class Answer(models.Model):
 	question = models.ForeignKey(
 		Question, 
