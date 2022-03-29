@@ -18,6 +18,11 @@ urlpatterns = [
         name='quiz_detail'
     ),
     url(
+        r'^(?P<pk>\d+)/$', 
+        views.save_quiz_view, 
+        name='save_view'
+    ),
+    url(
         r'^(?P<quiz_pk>\d+)/questions/$', 
         views.ListCreateQuestion.as_view(),
         name='question_list'
