@@ -27,7 +27,7 @@ SECRET_KEY = 'd%m-1^1j&=11q41vn3&83l&6x@mv6k#gux7qn&cc4vey^$_hp2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-izennn-izenonlinequiz-t8ev6wamx71.ws-us38.gitpod.io', 'localhost']
+ALLOWED_HOSTS = ['8000-izennn-izenonlinequiz-t8ev6wamx71.ws-us38.gitpod.io']
 
 # Application definition
 
