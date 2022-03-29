@@ -40,7 +40,7 @@ class Result(models.Model):
 		on_delete=models.CASCADE
 	)
 	name = models.CharField(max_length=255, default='Unknown')
-	score = models.PositiveIntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(100)])
+	score = models.DecimalField(default=1, validators=[MinValueValidator(1), MaxValueValidator(100)], max_digits=5, decimal_places=2)
 
 	class Meta:
 		ordering = ['id']
