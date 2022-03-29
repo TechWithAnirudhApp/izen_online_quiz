@@ -27,7 +27,7 @@ SECRET_KEY = 'd%m-1^1j&=11q41vn3&83l&6x@mv6k#gux7qn&cc4vey^$_hp2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['izen-quiz-backend.herokuapp.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['8000-izennn-izenonlinequiz-t8ev6wamx71.ws-us38.gitpod.io', 'localhost']
 
 # Application definition
 
@@ -155,8 +155,8 @@ REST_FRAMEWORK = {
 CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:8000',
-    'http://localhost:3000',
-    'https://izens-quiz.netlify.app',
-    'https://izen-online-quiz.netlify.app'
+    'https://3000-izennn-izenonlinequiz-t8ev6wamx71.ws-us38.gitpod.io', 
+    'https://8000-izennn-izenonlinequiz-t8ev6wamx71.ws-us38.gitpod.io',
+    # 'https://izens-quiz.netlify.app',
+    # 'https://izen-online-quiz.netlify.app'
 ]

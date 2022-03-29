@@ -9,7 +9,7 @@ import QuizBody from './containers/QuizBody';
 import { Header, Dimmer, Loader } from 'semantic-ui-react';
 
 // const localhost = 'http://127.0.0.1:8000';
-const HEROKU_BACKEND = 'https://izen-quiz-backend.herokuapp.com';
+const HEROKU_BACKEND = 'https://8000-izennn-izenonlinequiz-t8ev6wamx71.ws-us38.gitpod.io';
 const API_HEADER = '/api/v2';
 
 class App extends React.Component {
@@ -146,7 +146,7 @@ class App extends React.Component {
 				<Header 
 					as='h1' 
 					style={{textAlign: 'center'}}
-					content={chosenQuizId === undefined ? "Choose Quiz" : quizzes[chosenQuizId - 1].title}
+					content={chosenQuizId === undefined ? "Choose Quiz" : quizzes[chosenQuizId - 1]}
 				/>
 
 				<Dimmer active={isFetchingQuizzes} inverted>
