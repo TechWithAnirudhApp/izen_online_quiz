@@ -14,6 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.utils.html import format_html
+
 from django.conf.urls import url, include
 from django.urls import path
 from rest_framework import routers
@@ -24,6 +26,9 @@ router = routers.SimpleRouter()
 router.register(r'quizzes', views.QuizViewSet)
 router.register(r'questions', views.QuestionViewSet)
 router.register(r'answers', views.AnswerViewSet)
+
+site_header = 'AniQuiz Administation'
+admin.site.site_header = format_html(site_header)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
