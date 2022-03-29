@@ -12,9 +12,9 @@ class Quiz(models.Model):
 	author = models.ForeignKey(User, on_delete=models.CASCADE)
 	title = models.CharField(max_length=255, default='')
 	topic = models.CharField(max_length=120, default='')
-	time = models.IntegerField(help_text="duration of the quiz in minutes", default=2)
+	time = models.IntegerField(help_text="duration of the quiz in minutes")
 	required_score_to_pass = models.IntegerField(help_text="required score in %", default=50)
-	difficluty = models.CharField(max_length=6, choices=DIFF_CHOICES, default='easy')
+	difficluty = models.CharField(max_length=6, choices=DIFF_CHOICES)
 	created_at = models.DateTimeField(auto_now_add=True)
 	times_taken = models.IntegerField(default=0, editable=False)
 
