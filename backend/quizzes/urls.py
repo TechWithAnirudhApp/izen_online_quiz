@@ -36,6 +36,11 @@ urlpatterns = [
         r'^(?P<quiz_pk>\d+)/questions/(?P<questoin_pk>\d+)/answers/(?P<pk>\d+)/$',
         views.RetrieveUpdateDestroyAnswer.as_view(),
         name='answer_detail'
+    ),
+    url(
+        r'^(?P<pk>\d+)/$', 
+        views.save_quiz_view, 
+        name='quiz_save'
     )
 ]
 
