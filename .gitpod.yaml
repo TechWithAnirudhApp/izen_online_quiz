@@ -1,0 +1,23 @@
+tasks:
+  - init: |
+      cd backend
+      python -m pip install --upgrade pip
+      python -m pip install Django
+      python manage.py makemigrations
+      python manage.py migrate
+      cd frontend
+      npm i
+    command: |
+      cd backend
+      python manage.py runserver
+      cd frontend
+      npm start
+  
+ports:
+  - port: 8000
+    visibility: private
+    onOpen: open-preview
+
+vscode:
+  extensions:
+    - ms-python.python
