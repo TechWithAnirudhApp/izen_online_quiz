@@ -1,17 +1,10 @@
 tasks:
-  - init: |
-      cd backend
-      python -m pip install --upgrade pip
-      python -m pip install Django
-      python manage.py makemigrations
-      python manage.py migrate
-      cd frontend
-      npm i
-    command: |
-      cd backend
-      python manage.py runserver
-      cd frontend
-      npm start
+  - name: Backend
+    init: bash backend.sh
+    command: python manage.py runserver
+  - name: Frontend
+    init: bash frontend.sh
+    command: npm start
   
 ports:
   - port: 8000
