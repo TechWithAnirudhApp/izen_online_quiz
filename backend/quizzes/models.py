@@ -50,7 +50,8 @@ class Result(models.Model):
 		related_name='results', # need related name for hyper link related field to work ?!?
 		on_delete=models.CASCADE
 	)
-	user = models.ForeignKey(User, on_delete=models.CASCADE)
+	# user = models.ForeignKey(User, on_delete=models.CASCADE)
+	user = models.CharField(max_length=255, default='User')
 	score = models.DecimalField(default=1, validators=[MinValueValidator(1), MaxValueValidator(100)], max_digits=5, decimal_places=2)
 
 	class Meta:

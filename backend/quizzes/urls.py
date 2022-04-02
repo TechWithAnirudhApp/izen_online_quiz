@@ -38,7 +38,7 @@ urlpatterns = [
         name='answer_detail'
     ),
     url(
-        r'^(?P<pk>\d+)/$', 
+        r'^(?P<quiz_pk>\d+)/save/$', 
         views.save_quiz_view, 
         name='quiz_save'
     )

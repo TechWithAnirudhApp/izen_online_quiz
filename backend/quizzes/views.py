@@ -120,8 +120,8 @@ class AnswerViewSet(viewsets.ModelViewSet):
 	queryset = models.Answer.objects.all()
 	serializer_class = serializers.AnswerSerializer
 
-def save_quiz_view(request, pk):
-    if request.is_ajax():
+def save_quiz_view(request, quiz_pk):
+
         questions = []
         data = request.POST
         data_ = dict(data.lists())
@@ -135,7 +135,7 @@ def save_quiz_view(request, pk):
         print(questions)
 
         user = request.user
-        quiz = Quiz.objects.get(pk=pk)
+        quiz = Quiz.objects.get(pk=quiz_pk)
 
         score = 0
         multiplier = 100 / quiz.number_of_questions
