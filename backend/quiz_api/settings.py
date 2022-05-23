@@ -27,7 +27,7 @@ SECRET_KEY = 'd%m-1^1j&=11q41vn3&83l&6x@mv6k#gux7qn&cc4vey^$_hp2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-techwithanirudh-izenonli-crenf65lp0j.ws-us38.gitpod.io', 'localhost']
+ALLOWED_HOSTS = ['8000-techwithanirudh-izenonli-crenf65lp0j.ws-us45.gitpod.io', 'localhost']
 
 # Application definition
 
@@ -162,8 +162,8 @@ REST_FRAMEWORK = {
 CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = [
-    'https://3000-techwithanirudh-izenonli-crenf65lp0j.ws-us38.gitpod.io', 
-    'https://8000-techwithanirudh-izenonli-crenf65lp0j.ws-us38.gitpod.io',
+    'https://3000-techwithanirudh-izenonli-crenf65lp0j.ws-us45.gitpod.io', 
+    'https://8000-techwithanirudh-izenonli-crenf65lp0j.ws-us45.gitpod.io',
     # 'https://izens-quiz.netlify.app',
     # 'https://izen-online-quiz.netlify.app'
 ]

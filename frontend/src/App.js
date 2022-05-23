@@ -9,7 +9,7 @@ import QuizBody from './containers/QuizBody';
 import { Header, Dimmer, Loader } from 'semantic-ui-react';
 
 // const localhost = 'http://127.0.0.1:8000';
-const HEROKU_BACKEND = 'https://8000-techwithanirudh-izenonli-crenf65lp0j.ws-us38.gitpod.io';
+const HEROKU_BACKEND = 'https://8000-techwithanirudh-izenonli-crenf65lp0j.ws-us45.gitpod.io';
 const API_HEADER = '/api/v2';
 
 class App extends React.Component {
